@@ -20,3 +20,24 @@
 ![usableace1](https://github.com/livey/reinforcement-learning/blob/master/Figures/useace10k.png)
 ### state values, @ state no useble ace, 50k iteratioins
 ![usableace5](https://github.com/livey/reinforcement-learning/blob/master/Figures/useace50k.png)
+
+## Fig5.4
+![importanceSampling](https://github.com/livey/reinforcement-learning/blob/master/Figures/importanceSampling.png)
+
+## Fig6.5
+### after one run 
+![cliff1](https://github.com/livey/reinforcement-learning/blob/master/Figures/cliff_1run.png)
+### after 40 runs
+![cliff2](https://github.com/livey/reinforcement-learning/blob/master/Figures/cliff_40runs.png)
+
+## Fig7.2
+### random walk 100 runs
+![randomwalk1](https://github.com/livey/reinforcement-learning/blob/master/Figures/100repeatsrandomwalk.png)
+### random walk 1000 runs
+![randomwalk2](https://github.com/livey/reinforcement-learning/blob/master/Figures/1000repeatsrandomwalk.png)
+
+## Fig.8.5
+![fig8.5](https://github.com/livey/reinforcement-learning/blob/master/Figures/fig8_5.png)
+
+## Fig.9.10
+![randomwalk](https://github.com/livey/reinforcement-learning/blob/master/Figures/fig9_10.png)
