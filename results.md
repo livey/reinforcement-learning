@@ -12,13 +12,13 @@
 ![stateValues](https://github.com/livey/reinforcement-learning/blob/master/Figures/finalStateValue.png)
 
 ## Fig 5.1
-### state values, @ state no useble ace, 10k iteratioins
+### state values, @ state no useble ace, 10k iterations
 ![nousableace1](https://github.com/livey/reinforcement-learning/blob/master/Figures/noace10k.png)
-### state values, @ state no usable ace, 50k iteratioins
+### state values, @ state no usable ace, 50k iterations
 ![nousableace5](https://github.com/livey/reinforcement-learning/blob/master/Figures/noace50k.png)
-### state values, @ state useble ace, 10k iteratioins
+### state values, @ state useble ace, 10k iterations
 ![usableace1](https://github.com/livey/reinforcement-learning/blob/master/Figures/useace10k.png)
-### state values, @ state no useble ace, 50k iteratioins
+### state values, @ state no useble ace, 50k iterations
 ![usableace5](https://github.com/livey/reinforcement-learning/blob/master/Figures/useace50k.png)
 
 ## Fig 5.4
