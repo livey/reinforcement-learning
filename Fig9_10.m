@@ -4,12 +4,6 @@ dbstop iff error
 global trueStateValues
 % test block 
 init();
-
-% for ii=1:1000
-%     ss = state2sub(ii,'multi');
-%     fprintf('state %d, sub %d \n',ii,ss(50));
-%   
-% end
 plot9_10();
 
 function init()
@@ -22,17 +16,6 @@ maxSteps = 100; % reduce the computation
 
 global numOfStates trueStateValues
 numOfStates = 1000; % except the terminate states 
-% use Bellman equation to solve the true sate value 
-% A = zeros(numOfStates);
-% for ii=2:numOfStates-1
-%     A(ii,[ii-1,ii+1]) = [1,1]/2;
-% end
-% A(1,2)= .5;
-% A(numOfStates,numOfStates-1) = .5;
-% b =zeros(numOfStates,1);
-% b(1)= -.5;
-% b(end) = .5;
-% trueStateValues = inv(eye(numOfStates)-A)*b;
 
 % the new stateValue evaluation 
 A = zeros(numOfStates);
@@ -128,18 +111,13 @@ for kk = 1:episodes
     [tra,r]=play();
     subs = state2sub(tra(1:end-1),'single'); % batch convert state to subscripts
     for ii=1:length(tra)-1
-%         sub = state2sub(tra(ii),'single');
         sub = subs(ii);
         wt = w(sub);
         wt = wt + alphaSingle*(r - wt)*1;
         w(sub) = wt;
     end
-    
-%     for ii = 1:numOfStates
-%         stateValues(ii) = w(state2sub(ii,'single'));
-%     end
+ 
     stateValues = w(state2sub(1:1000,'single'));
-%     isequal(tp,stateValues)
     rmse(kk) = sqrt(mean((stateValues-trueStateValues).^2));
 end
 
@@ -154,12 +132,8 @@ for kk = 1:episodes
     [tra,r]=play();
     subs = state2sub(tra(1:end-1),'multi');
     for ii=1:length(tra)-1
-%         subs = state2sub(tra(ii),'multi');
         sub = subs(:,ii);
-%         isequal(subs,sub)
-%         indx = sub2ind([50,6],1:50,sub');
         indx = (sub-1)*50+[1:50]';
-%         isequal(indx,indx1')
         wt = w(indx);
         wt = wt + alphaMulti*(r - sum(wt));
         w(indx) = wt;
@@ -167,12 +141,8 @@ for kk = 1:episodes
     
     subs = state2sub(1:1000,'multi');
     for ii = 1:numOfStates
-%         subt = state2sub(ii,'multi');
         sub = subs(:,ii);
-%         isequal(subt,sub)
-%         indx = sub2ind([50,6],1:50,sub');
         indx= (sub-1)*50+[1:50]';
-%         isequal(indx,indx1')
         stateValues(ii) = sum(w(indx));
     end
     rmse(kk) = sqrt(mean((stateValues-trueStateValues).^2));
