@@ -414,6 +414,6 @@ plot(mean(rewardsQ),'r','linewidth',2);
 hold on;
 plot(mean(rewardsQplus),'linewidth',2);
 
-legend('DynaQ','DynnQ+');
+legend('DynaQ','DynaQ+');
 xlabel('Time steps');
 ylabel('Cumulative reward');
